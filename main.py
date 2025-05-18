@@ -46,10 +46,7 @@ if __name__ == '__main__':
         'Borrow book',
         lambda: service.borrow_book()  # Call borrow operation in service
     )
-    register_menu(
-        'Return book',
-        lambda: service.return_book()  # Call borrow operation in service
-    )
+
     register_menu(
         'Quit',
         None  # Special case: None means exit
