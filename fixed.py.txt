@@ -1,0 +1,52 @@
+    def return_book(self):
+        """
+        Prompt user to return a book: validate record, update item status, remove loan record.
+        """
+        # 1. Get item
+        item_id = input("Book ID: ").strip()
+        item = self.items_repo.get(item_id)
+        if not item:
+            print("Book not found.")
+            return
+
+        if item.status == 'available':
+            print("Book is already available.")
+            return
+
+        # 2. Get member
+        member_id = input("Member ID: ").strip()
+        member = self.members_repo.get(member_id)
+        if not member:
+            print("Member not found.")
+            return
+
+        # 3. Load all loan records
+        with open(self.LOANS_PATH, 'r', newline='', encoding='utf-8') as f:
+            reader = csv.DictReader(f)
+            loans = list(reader)
+
+        # 4. Look for matching loan
+        match_found = False
+        filtered_loans = []
+        for row in loans:
+            if row['item_id'] == item.id and row['borrowed_by'] == member.id:
+                match_found = True
+            else:
+                filtered_loans.append(row)
+
+        if not match_found:
+            print("Loan record not found.")
+            return
+
+        # 5. Update item status
+        item.status = 'available'
+        self.items_repo.update(item)
+
+        # 6. Rewrite CSV without the returned loan
+        with open(self.LOANS_PATH, 'w', newline='', encoding='utf-8') as f:
+            writer = csv.DictWriter(f, fieldnames=['item_id', 'borrowed_by', 'loan_date'])
+            writer.writeheader()
+            for row in filtered_loans:
+                writer.writerow(row)
+
+        print(f"Book {item.id} returned by member {member.id}.")
