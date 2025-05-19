@@ -25,6 +25,10 @@ if __name__ == '__main__':
 
     # Build the interactive menu dynamically
     register_menu(
+        'Quit',
+        None  # Special case: None means exit
+    )
+    register_menu(
         'List members',
         lambda: members_repo.list()  # Print all members
     )
@@ -45,11 +49,6 @@ if __name__ == '__main__':
     register_menu(
         'Borrow book',
         lambda: service.borrow_book()  # Call borrow operation in service
-    )
-
-    register_menu(
-        'Quit',
-        None  # Special case: None means exit
     )
 
     # Main loop: display menu and handle user input
