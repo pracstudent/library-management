@@ -101,21 +101,6 @@ class MembersRepository:
         # """
         # Delete a Member from the CSV file by their ID.
         # """
-        # rows = []   # List to hold all rows except the one we want to delete
-        # # Open the CSV file for reading
-        # with open(self.CSV_PATH, newline='', encoding='utf-8') as f:
-        #     reader = csv.DictReader(f)
-        #     # Read each row and check if it matches the member ID we want to delete
-        #     for row in reader:
-        #         if row['id'] != member_id:
-        #             rows.append(row)
-        # # Open the CSV file for writing (overwriting the old data)
-        # with open(self.CSV_PATH, 'w', newline='', encoding='utf-8') as f:
-        #     writer = csv.DictWriter(f, fieldnames=reader.fieldnames)
-        #     writer.writeheader()  # Write the header row
-        #     writer.writerows(rows)  # Write all rows back to the CSV, excluding the deleted one
-        # # Let the user know the member was deleted successfully
-        # print(f"Member {member_id} deleted.")
         
         """Delete a member by ID from csv/members.csv."""
         member_id = input("Enter the ID of the member to delete: ").strip()
