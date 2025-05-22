@@ -1,6 +1,6 @@
 # Library Management System
 
-XXWelcome to the **Library Management System**, a Python-based console application demonstrating object-oriented programming (OOP) principles alongside system modelling techniques.
+Welcome to the **Library Management System**, a Python-based console application demonstrating object-oriented programming (OOP) principles alongside system modelling techniques.
 
 ## Problem Statement
 
