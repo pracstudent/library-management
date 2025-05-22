@@ -1,7 +1,6 @@
-
 # Library Management System
 
-Welcome to the **Library Management System**, a Python-based console application demonstrating object-oriented programming (OOP) principles alongside system modelling techniques.
+XXWelcome to the **Library Management System**, a Python-based console application demonstrating object-oriented programming (OOP) principles alongside system modelling techniques.
 
 ## Problem Statement
 
@@ -70,17 +69,17 @@ At our school library, locating and updating paper-based member and item records
        ^                                 ^                             |
        |                                 |                             |
        +---------------+  +--------------+-----------------------------+
-                       |  |                                              
-             +--------------------------+                                 
-             |    LibraryService        |                                
-             |--------------------------|                                 
-             | - members_repo           |                                 
-             | - items_repo             |                                 
-             | - LOANS_PATH             |                                 
-             |--------------------------|                                 
-             | + borrow_book(): None    |                                 
-             | + return_book(): None    |                                 
-             +--------------------------+                                 
+                       |  |                                            
+             +--------------------------+                               
+             |    LibraryService        |                              
+             |--------------------------|                               
+             | - members_repo           |                               
+             | - items_repo             |                               
+             | - LOANS_PATH             |                               
+             |--------------------------|                               
+             | + borrow_book(): None    |                               
+             | + return_book(): None    |                               
+             +--------------------------+                               
 ```
 
 ## OOP Principles Aligned to NESA Year 11 Syllabus
